@@ -1,0 +1,79 @@
+{% extends "app/base.html" %}
+{% load i18n static bootstrap4 bootstrap_icons %}
+
+{% block bootstrap4_extra_head %}
+{{ block.super }}
+<style>
+    .my-hover:hover { color: red; }
+    .my-background {
+        color: white;
+        background-color: lightgray;
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 20%;
+    }
+</style>
+{% endblock %}
+
+{% block page_title %}Bootstrap icon samples{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% bs_icon_svg 'alarm' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon_svg 'calendar-date' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon_svg 'calendar-date' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon_svg 'alarm' color='red' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' color='red' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon_svg 'alarm' size='1.5rem' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' size='1.5rem' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon_svg 'alarm' size='20px' color='#7700CC' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' size='20px' color='#7700CC' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon_svg 'alarm' size='3rem' extra_classes='my-hover my-background' %}</td>
+                    <td>
+                        <pre>
+{% verbatim %}{% bs_icon_svg size='2rem' extra_classes='my-hover my-background' %}
+css:
+.my-hover:hover { color: red; }
+.my-background {
+    color: white;
+    background-color: lightgray;
+    padding: 5px;t
+    border: 1px solid #333;
+    border-radius: 20%;
+}
+                        {% endverbatim %}
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{% custom_svg 'paper-plane' size='1.5rem' color='blue' %}</td>
+                    <td><pre>{% verbatim %}{% custom_svg 'paper-plane' size='1.5rem' color='blue' %}{% endverbatim %}</pre></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}
