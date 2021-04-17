@@ -70,6 +70,11 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+
 WSGI_APPLICATION = 'django_bootstrap_icons_sample.wsgi.application'
 
 

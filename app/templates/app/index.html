@@ -3,6 +3,7 @@
 
 {% block bootstrap4_extra_head %}
 {{ block.super }}
+<link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
 <style>
     .my-hover:hover { color: red; }
     .my-background {
@@ -12,6 +13,7 @@
         border: 1px solid #333;
         border-radius: 20%;
     }
+    p {border-top: 1px solid gray;border-bottom: 1px solid gray;}
 </style>
 {% endblock %}
 
@@ -30,30 +32,30 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{% bs_icon_svg 'alarm' %}</td>
-                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' %}{% endverbatim %}</pre></td>
+                    <td>{% bs_icon 'alarm' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'alarm' %}{% endverbatim %}</pre></td>
                 </tr>
                 <tr>
-                    <td>{% bs_icon_svg 'calendar-date' %}</td>
-                    <td><pre>{% verbatim %}{% bs_icon_svg 'calendar-date' %}{% endverbatim %}</pre></td>
+                    <td>{% bs_icon 'calendar-date' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'calendar-date' %}{% endverbatim %}</pre></td>
                 </tr>
                 <tr>
-                    <td>{% bs_icon_svg 'alarm' color='red' %}</td>
-                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' color='red' %}{% endverbatim %}</pre></td>
+                    <td>{% bs_icon 'alarm' color='red' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'alarm' color='red' %}{% endverbatim %}</pre></td>
                 </tr>
                 <tr>
-                    <td>{% bs_icon_svg 'alarm' size='1.5rem' %}</td>
-                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' size='1.5rem' %}{% endverbatim %}</pre></td>
+                    <td>{% bs_icon 'alarm' size='1.5em' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'alarm' size='1.5em' %}{% endverbatim %}</pre></td>
                 </tr>
                 <tr>
-                    <td>{% bs_icon_svg 'alarm' size='20px' color='#7700CC' %}</td>
-                    <td><pre>{% verbatim %}{% bs_icon_svg 'alarm' size='20px' color='#7700CC' %}{% endverbatim %}</pre></td>
+                    <td>{% bs_icon 'alarm' size='20px' color='#7700CC' %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'alarm' size='20px' color='#7700CC' %}{% endverbatim %}</pre></td>
                 </tr>
                 <tr>
-                    <td>{% bs_icon_svg 'alarm' size='3rem' extra_classes='my-hover my-background' %}</td>
+                    <td>{% bs_icon 'alarm' size='3em' extra_classes='my-hover my-background' %}</td>
                     <td>
                         <pre>
-{% verbatim %}{% bs_icon_svg size='2rem' extra_classes='my-hover my-background' %}
+{% verbatim %}{% bs_icon size='2em' extra_classes='my-hover my-background' %}
 css:
 .my-hover:hover { color: red; }
 .my-background {
@@ -68,12 +70,43 @@ css:
                     </td>
                 </tr>
                 <tr>
-                    <td>{% custom_svg 'paper-plane' size='1.5rem' color='blue' %}</td>
-                    <td><pre>{% verbatim %}{% custom_svg 'paper-plane' size='1.5rem' color='blue' %}{% endverbatim %}</pre></td>
+                    <td>{% custom_icon 'paper-plane' size='1.5em' color='blue' %}</td>
+                    <td><pre>{% verbatim %}{% custom_icon 'paper-plane' size='1.5em' color='blue' %}{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>
+                        {% bs_icon 'alarm' extra_classes="bi-valign-default" %}
+                        {% bs_icon 'alarm' extra_classes="bi-valign-middle" %}
+                        {% bs_icon 'alarm' extra_classes="bi-valign-bottom" %}
+                        {% bs_icon 'alarm' extra_classes="bi-valign-text-top" %}
+                        {% bs_icon 'alarm' extra_classes="bi-valign-text-bottom" %}
+                    </td>
+                    <td><pre>{% verbatim %}Alignement extra_classes: bi-valign-default bi-valign-middle bi-valign-bottom
+                          bi-valign-text-top bi-valign-text-bottom{% endverbatim %}</pre></td>
+                </tr>
+                <tr>
+                    <td>{% bs_icon 'alarm' size='1.5em' extra_classes="text-success bg-warning" %}</td>
+                    <td><pre>{% verbatim %}{% bs_icon 'alarm' size='1.5em' extra_classes="text-success bg-warning" %}{% endverbatim %}</pre></td>
                 </tr>
             </tbody>
         </table>
 
     </div>
 </div>
+
+<p>
+    {% bs_icon 'alarm' extra_classes="bi-valign-default" %} align -.125 and some text
+</p>
+<p>
+    {% bs_icon 'alarm' extra_classes="bi-valign-middle" %} align middle and some text
+</p>
+<p>
+    {% bs_icon 'alarm' extra_classes="bi-valign-bottom" %} align bottom and some text
+</p>
+<p>
+    {% bs_icon 'alarm' extra_classes="bi-valign-text-top" %} align text-top and some text
+</p>
+<p>
+    {% bs_icon 'alarm' extra_classes="bi-valign-text-bottom" %} align text-bottom and some text
+</p>
 {% endblock %}
