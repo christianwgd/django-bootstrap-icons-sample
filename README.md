@@ -1,6 +1,6 @@
 # Example project for django-bootstrap-icons
 
-This example project only supports the latest version of Django.
+This is an example for the usage of the [django-bootstrap-icons](https://github.com/christianwgd/django-bootstrap-icons) package.
 
 ## Instructions
 
