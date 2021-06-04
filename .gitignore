@@ -106,3 +106,6 @@ venv.bak/
 # dev env
 .idea
 .project
+
+# bootstrap icon cache
+icon_cache/

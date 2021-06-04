@@ -136,3 +136,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BOOTSTRAP4 = {
     "include_jquery": True,
 }
+
+BS_ICONS_CACHE_URL = os.path.join(BASE_DIR, 'icon_cache')
